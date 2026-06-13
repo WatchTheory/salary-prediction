@@ -55,11 +55,29 @@ Then feed BOTH into an ML model for better predictions
 **1.Choose A Model**
   - Linear Regression
   - Ridge/Lasso Regression
-  - Random Forest
-  - Cradient Boosting(XGBoost)
+  
+  
+  
+ 3. Random Forest
+ 4. Cradient Boosting(XGBoost)
+     - What Dose XBoost Do?
+        - machine learning algorithm under ensemble learning and It is trendy for supervised learning tasks
+        - It utilizes decision trees as base learners and employs regularization techniques to enhance model generalization
+        - <u>The algorithm works by sequentially adding weak learners to the ensemble, with each new learner focusing on correcting the errors made by the existing ones.</u> 
+        - include its ability to handle complex relationships in data, regularization techniques to prevent overfitting and incorporation of parallel processing
+
+
+ 
+
 
 
 <u>Why did you choose that Model?</u>
+
+ - 
+ -
+ -
+ -
+
 
 **2.Choose A Encoder (For Machine Learning)**
   - Label Encode : Converts target variables (classes) into integers (0 to n-1); not recommended for predictor variables as it implies false ordinality. 
@@ -80,22 +98,29 @@ Thoughs :
   0 (Entry) -----> 1 (Mid) ------> 2(Senior) -------> 3 (Lead)
  ```
 - Higher integer = more experience — the model can now learn "salary tends to rise with experience"
-
+<br>
 
 <u>Why did you choose that Encode:</u> 
    - Best choice: Label Encode  
-     -- map to explicit integers that preserve order (Entry=0, Mid=1, Senior=2, Lead=3).
-     -- integers have an implied size relationship (3 > 2 > 1 > 0), and you want that relationship to match reality.
-     -- is to define the order yourself before encoding, using either OrdinalEncoder(categories=[...]) from scikit-learn or a simple pandas .map() dict. Both give the same result — the pandas .map() approach is often cleaner to read and easier to debug.
+     - map to explicit integers that preserve order (Entry=0, Mid=1, Senior=2, Lead=3).
+     - integers have an implied size relationship (3 > 2 > 1 > 0), and you want that relationship to match reality.
+     - is to define the order yourself before encoding, using either OrdinalEncoder(categories=[...]) from scikit-learn or a simple pandas .map() dict. Both give the same result — the pandas .map() approach is often cleaner to read and easier to debug.
     
-     -- will preserve order (Entry=0, Mid=1, Senior=2, Lead=3)
-      -- Will it preserve the order for location and Rank? 
+     - will preserve order (Entry=0, Mid=1, Senior=2, Lead=3)
+     - Will it preserve the order for location and Rank? 
         
 
      
 
 **3.Research market job index - cost of living index score**
+ - How to tie in airport geo lat/lon to cost of living index
 
+
+
+
+Source : 
+ - [Cost of Living](https://www.kaggle.com/datasets/lukkardata/cost-of-living-missouri-economic-research)
+ -
 
 
 
