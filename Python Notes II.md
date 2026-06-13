@@ -52,14 +52,16 @@ Then feed BOTH into an ML model for better predictions
 
 **Steps**
 
-1.Choose A Model 
+**1.Choose A Model**
   - Linear Regression
   - Ridge/Lasso Regression
   - Random Forest
   - Cradient Boosting(XGBoost)
 
 
-2.Choose A Encoder (For Machine Learning)
+<u>Why did you choose that Model?</u>
+
+**2.Choose A Encoder (For Machine Learning)**
   - Label Encode : Converts target variables (classes) into integers (0 to n-1); not recommended for predictor variables as it implies false ordinality. 
   - Hot-One Encode : Creates binary columns for each category; ideal for nominal data with few categories
   - Binary Encoder : Eliminated 
@@ -73,22 +75,26 @@ Eliminated Encoders
 
 Thoughs : 
 
-I was leading towards Leave-One-Out Encoder because it 1. Reduce Over fitting, I believe it might  happen because some of the position in the location column. 2. Leakage Prevention : Excludes the current observation target ( in this case the targets I feed the model) to caluclate the mean and reduce bias.
-```
-0 (Entry) -----> 1 (Mid) ------> 2(Senior) -------> 3 (Lead)
-```
-Higher integer = more experience — the model can now learn "salary tends to rise with experience"
+- I was leading towards Leave-One-Out Encoder because it 1. Reduce Over fitting, I believe it might  happen because some of the position in the location column. 2. Leakage Prevention : Excludes the current observation target ( in this case the targets I feed the model) to caluclate the mean and reduce bias.
+ ```
+  0 (Entry) -----> 1 (Mid) ------> 2(Senior) -------> 3 (Lead)
+ ```
+- Higher integer = more experience — the model can now learn "salary tends to rise with experience"
 
 
-Why did you choose that Encode : 
-   - Best choice 
+<u>Why did you choose that Encode:</u> 
+   - Best choice: Label Encode  
      -- map to explicit integers that preserve order (Entry=0, Mid=1, Senior=2, Lead=3).
      -- integers have an implied size relationship (3 > 2 > 1 > 0), and you want that relationship to match reality.
      -- is to define the order yourself before encoding, using either OrdinalEncoder(categories=[...]) from scikit-learn or a simple pandas .map() dict. Both give the same result — the pandas .map() approach is often cleaner to read and easier to debug.
+    
+     -- will preserve order (Entry=0, Mid=1, Senior=2, Lead=3)
+      -- Will it preserve the order for location and Rank? 
+        
 
      
 
-3.Research market job index - cost of living index score
+**3.Research market job index - cost of living index score**
 
 
 
@@ -106,6 +112,28 @@ Why did you choose that Encode :
 
 
 5.Encode Text Column 'Job_titles'
+
+1. Define the order yourself for the `Experience` Column before encoding using either `OrdinalEncoder(categories[...])` from scikit-learn or a simple pandas `.map` approach. The same logic applies to `company_size` (Small=0, Medium=1, Large=2) 
+
+Problem : 
+We found a way to Encode the `company_size` and the `Experience` column but not the `Location` column. So 
+  - How do you index major cities in the U.S?
+   1. We could use Leave-One-Out Encode for location
+   or 
+   2. See **Note 3 and **Note 4
+
+
+
+
+**Note 3:  When it came time to finding a way to encode the `location` column, at the time there was only which was using Leave-one-Out Encode. Now I was like " I can think of something better to use", so I came up with a genius and creative idea.
+
+Here is the problem, I wanted to encode the `location` column with Label Encoder after some research that wasn't going to work out so well. I have to find a better way at encoding the major cities in the U.S. Since the major cities don't have real order to them, I need to find a way to index the major cities.
+
+The answer: airports, I don't want to use the major cities but the airport code , more specificly the airport lat/lon coordinates. See every airport has a 3 letter code in the U.S, for example the LAX is Los Angeles Aiport, in order to become a airport you need to be given a 3 digit letter by the IATA (which is located in Canada) or the IATA airpot codes these special 3 letters 
+for location identification in the 1930, back then the U.S used the two-letters code for the National Weather Service (NWS)
+to identify cities.
+
+Note 4:I won't worry about cost of living and local labour demand for the cities that may come later.
 
 
 
