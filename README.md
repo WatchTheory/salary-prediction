@@ -4,20 +4,19 @@
 
 ## Project Overview
 
-- [Key Findings]()
-- [Dataset]()
-- [Tools & Technology]()
-- [Project Strucuture]()
-- [Methodology]()
-- [Machin Learning Model]()
-- [Business Recommendations]()
-- [How to Run]()
-- [What I'd Improve with  more Time]()
+- [Key Findings](#key-findings-in-progress)
+- [Dataset](#dataset)
+- [Tools & Technology](#tools--technology)
+- [Project Strucuture](#project-structure)
+- [Methodology](#methodology-in-progress)
+- [Machin Learning Model](#machine-learning-model-in-progress)
+- [Business Recommendations](#business-recommendations-in-progress)
+- [How to Run the Project](#run-the-project)
+- [What I'd Improve with more Time](#what-id-improve-with--more-time)
 
 
 
 ## Key Findings (In Progress)
-
 
 
 
@@ -47,8 +46,7 @@ Source:
 |  Seaborn/Mathplib/Plotly  |  Data Visualization       |
 |  Scikit-learn      |  Machine Learning Models      |
 |   SQL   |  Complex Querying and Analyst     |
-
-
+|  Google Sheets/Excel |   used for web scrapping data |  
 
 
 
@@ -60,8 +58,9 @@ salary-prediction-project/
 │   ├── raw/          # Raw dataset
 │   ├── cleaned/      # Cleaned datasets
 │
-├── notebooks/        # All notebooks
-│
+├── notebooks/                  # All notebooks
+│   ├── data_cleaning.ipynb/    # data cleaning notebook
+│  
 ├── sql/
 │   ├── schema.sql                # SQL Schema
 │   ├── analysis_queries.sql      # SQL Queries
@@ -80,9 +79,9 @@ salary-prediction-project/
 
 
 
-## Methodology 
-> Note
-Rename this to Methodology or Approach. "What the notebook covers" sounds like a table of contents; "Methodology" sounds like an analyst wrote it. Walk through each cleaning decision briefly — not just what you did, but why.
+## Methodology (In Progress)
+
+
 
 
 ## Machine Learning Model (In Progress)
@@ -98,6 +97,7 @@ Rename this to Methodology or Approach. "What the notebook covers" sounds like a
 
 
 1.Clone the repository
+
 2.Install dependencies
 ```python
 pip install -r requirements.txt
