@@ -20,11 +20,10 @@
 
 
 
-
 ## Dataset
 
 > [!WARNING]
-The `messy_data_analyst_job.csv` dataset is fake data created by me only for this project.
+The `messy_data_analyst_job.csv` is to practice this end-to-end data cleaning and modeling because I couldn't find a dataset to use and that was free, I generated a synthetic dataset modeled on real job posting distributions and real location.
 
 Source: 
 
