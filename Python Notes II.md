@@ -3,20 +3,13 @@
 
 ## Overview
 
--
--
--
--
--
--
--
--
--
--
--
--
--
--
+- [Problem]()
+- [The Solution]()
+    1. Choosing a Model
+       - why I choose the model 
+     2. Choose a Encoder 
+     3. Market Index
+
 
 
 
@@ -35,14 +28,15 @@ that has `job_title`, 'salary' , 'location', `experience`, 'company_size', 'remo
  - The Model should be able to predict salary for all data analyst job titles
 
 
-**Equation:** 
 
+**Equation:** 
+You can think of the equation of what we are trying to solve for.
 $$
 Salary = title + location + Experience
 $$
 
+For Reference: of what the dataset looks before
 
-For Reference
 Before:
 
 |  job_title             |  salary    |  location     |  experience | 
@@ -52,17 +46,14 @@ Before:
 | Marketing Data Analyst |   95,000   | Phonenix, AZ  |    None     |
 
 
-<br>
-
 ----
-
 
 ### Problem 
 **Problem:** Some jobs in the dataset don't match realistic values (for example "junior data analyst") would never be paid $0 in Las Vegas. In order to make sure this data can be presented *realistic*. The salary column needs to be formated to *realistic* or *bealivable* values.  
 
 **Objective** : You need find a way to make the salaries more realistic to the job & location
  
-
+For Reference: of what we are trying to get the dataset to look like at the end.
 
 After:
 |  job_title             |  salary    |  location     |  experience | 
@@ -82,10 +73,9 @@ After:
       - Use lat/lon of citie airport.
          - Note: Some cities have two multiple airports, so will use my best judgement when decising on the which airports to use.
    - Create new column of airports lat/lon in dataframe 
-
-
-
 ```
+
+
 **Steps**
 **1.Choose A Model**
   - **Linear Regression**
@@ -156,7 +146,8 @@ When using different models Random Forest (Runner-Up) will be used because its a
 Elimiated Models
 - Linear Regression : During my research I am trying to predict salaries and one of the advanatage of `Linear Regression` is it works best when the data is linear. The data I am doing is <u>**not at all linear**</u>. Another issue, is that it doesn't handle outliers very well and is very senstive to outliers, the data I am working with will have mostly like have outliers, for example Senior Data Analyst pay is `$50` vs Junior Analyst `$90,000`. When your working in (thousands) the $50 will be the outliers. The Model would be good to use for a baseline
 
-<br>
+----
+
 
 **2.Choose A Encoder (For Machine Learning)**
   - Label Encode : Converts target variables (classes) into integers (0 to n-1); not recommended for predictor variables as it implies false ordinality. 
@@ -183,6 +174,7 @@ Eliminated Encoders
      - integers have an implied size relationship (3 > 2 > 1 > 0), and want the relationship to match reality.
      - is to define the order yourself before encoding, using either OrdinalEncoder(categories=[...]) from scikit-learn or a simple pandas .map() dict. Both give the same result — the pandas .map() approach is often cleaner to read and easier to debug.
 
+---
 
 
 **3.Research market job index - cost of living index score**
@@ -191,8 +183,10 @@ Eliminated Encoders
 
 
 Source : 
- - [Cost of Living](https://www.kaggle.com/datasets/lukkardata/cost-of-living-missouri-economic-research)
- -
+ - [Kaggle](https://www.kaggle.com/datasets/lukkardata/cost-of-living-missouri-economic-research)
+ - [Zillow](https://www.zillow.com/home-values/102001/united-states/)
+ - [Numbeo](https://www.numbeo.com/cost-of-living/country_result.jsp?country=United+States)
+
 
 
 

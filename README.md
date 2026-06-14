@@ -37,7 +37,6 @@ Source:
 
 
 
-
 ## Tools & Technology
 
 |  Tools  |  Purpose      |
@@ -75,6 +74,7 @@ salary-prediction-project/
 │   ├── predict.py          # Salary Predictions Model
 │
 ├── README.md               # ReadMe File 
+├── Notes.txt               # Deep Dive into the question I asked and how I solved problems.  
 ├── requirements.txt        # Required tools to run the project
 ```
 
@@ -85,11 +85,7 @@ salary-prediction-project/
 Rename this to Methodology or Approach. "What the notebook covers" sounds like a table of contents; "Methodology" sounds like an analyst wrote it. Walk through each cleaning decision briefly — not just what you did, but why.
 
 
-
-
 ## Machine Learning Model (In Progress)
-
-
 
 
 
@@ -98,12 +94,8 @@ Rename this to Methodology or Approach. "What the notebook covers" sounds like a
 
 
 
-
-
-
 ## Run The Project
-> Note
-Keep this but add the exact commands. No vague "install the requirements
+
 
 1.Clone the repository
 2.Install dependencies
