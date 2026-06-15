@@ -71,6 +71,7 @@ After:
 - Choose Label Encode  
    - Found Better way: 
       - Use lat/lon of citie airport.
+      
          - Note: Some cities have two multiple airports, so will use my best judgement when decising on the which airports to use.
    - Create new column of airports lat/lon in dataframe 
 ```
@@ -173,7 +174,6 @@ Eliminated Encoders
      - map to explicit integers that preserve order (Entry=0, Mid=1, Senior=2, Lead=3).
      - integers have an implied size relationship (3 > 2 > 1 > 0), and want the relationship to match reality.
      - is to define the order yourself before encoding, using either OrdinalEncoder(categories=[...]) from scikit-learn or a simple pandas .map() dict. Both give the same result — the pandas .map() approach is often cleaner to read and easier to debug.
-
 ---
 
 
@@ -190,14 +190,10 @@ Source :
 
 
 
-**3.5 How to build Salary Score Index?**
+**Geolocation**
 
-
-
- 
-**4.Build Salary Score Index**
-
-
+- Using python, create python script to get the geolocation for these respect, after viewing the geolocation
+- Create new pandas dataframe to map the geolocation to the correct cities then, add the two columns to bdata dataframe
 
 
 
@@ -214,6 +210,11 @@ We found a way to Encode the `company_size` and the `Experience` column but not 
      2. See **Note 3 and **Note 4
 
 
+
+
+
+---
+
 ==Note 3==:  When it came time to finding a way to encode the `location` column, at the time there was only which was using Leave-one-Out Encode. Now I was like " I can think of something better to use", so I came up with a genius and creative idea.
 
 Here is the problem, I wanted to encode the `location` column with Label Encoder after some research that wasn't going to work out so well. I have to find a better way at encoding the major cities in the U.S. Since the major cities don't have real order to them, I need to find a way to index the major cities.
@@ -224,15 +225,16 @@ to identify cities.
 
 ==Note 4==:I won't worry about cost of living and local labour demand for the cities that may come later.
 
+---
 
 
 
-6.Predict Salary Values for Salary Column
+**6.Predict Salary Values for Salary Column**
 
 
 
 
-6.5.How to fill in salary values from Model?
+**6.5.How to fill in salary values from Model?**
 
 
 ------------ Not On the List Yet--------------
@@ -253,8 +255,10 @@ Note 2: Because no solution is generic, I added questions to the problem that I 
 Unrelated Information
 
 ```python
-from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import LabelEncoder
+import xgboost as xgb                                
+from sklearn.model_selection import train_test_split  
+from sklearn.metrics import accuracy_score
 ```
 
 
