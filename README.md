@@ -72,7 +72,6 @@ salary-prediction-project/
 
 
 ## Run The Project
-| 
 
 1.Clone the repository
 
