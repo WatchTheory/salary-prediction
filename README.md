@@ -43,11 +43,10 @@ The `messy_data_analyst_job.csv` is to practice this end-to-end data cleaning an
 
 ## Model
 
+Phase 1: Baseline Testing (Failed) $\rightarrow$ Phase 2: Feature Engineering & Tuning (In-Progress)
 **Pipeline diagram**
 ![Pipeline](/images/ml_pipeline_four_models.png)
 
-
-Phase 1: Baseline Testing (Failed) $\rightarrow$ Phase 2: Feature Engineering & Tuning (In-Progress)
 
 
 
@@ -66,7 +65,6 @@ Reduced overfitting by
 | Random Forrest | 0.14  |      |  0.16       |
 | Decision Tree  | 0.10  |      |             |
 | LightGBM       | 0.53  |      |             |
-
 
 
 
@@ -99,6 +97,9 @@ salary-prediction-project/
 ├── README.md               # ReadMe File            
 ├── requirements.txt        # Required tools to run the project
 ```
+
+## Screenshots
+![SQL-Server](/images/resume_project_4.jpg)
 
 
 ## Run The Project
