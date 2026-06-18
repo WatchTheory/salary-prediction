@@ -40,6 +40,36 @@ The `messy_data_analyst_job.csv` is to practice this end-to-end data cleaning an
 |  Google Sheets/Excel |   used for web scrapping data |  
 
 
+
+## Model
+
+**Pipeline diagram**
+![Pipeline](/images/ml_pipeline_four_models.png)
+
+
+Phase 1: Baseline Testing (Failed) $\rightarrow$ Phase 2: Feature Engineering & Tuning (In-Progress)
+
+
+
+Reduced overfitting by 
+1. Reducing data leaks 
+2. Simplify train,test, fit process by putting in a pipeline
+3. Removing unnescessary and unrealistic rows 
+
+
+<br>
+
+**R2 Results**
+| Models         | Train | Test | OverFit Gap |
+| -------------- | ----- | ---- | ----------- |
+| XGBoost        | 0.32  |      |             |
+| Random Forrest | 0.14  |      |  0.16       |
+| Decision Tree  | 0.10  |      |             |
+| LightGBM       | 0.53  |      |             |
+
+
+
+
 ## Project Structure
 
 ```python
@@ -52,7 +82,8 @@ salary-prediction-project/
 │          ├── Cleaned_data_analyst_jobs.csv/
 │          ├── Cost-of-Living-Cities(CLI).csv
 ├── notebooks/                                      # All notebooks
-│   ├── data_cleaning.ipynb/                        # data cleaning notebook
+│   ├── Geolocation-python.ipynb/                    
+│   ├── Salary-Prediction.ipynb/                    # Main  notebook
 │  
 ├── sql/
 │   ├── schema.sql                # SQL Schema
@@ -65,8 +96,7 @@ salary-prediction-project/
 │   ├── train_model.py      # trained Model
 │   ├── predict.py          # Salary Predictions Model
 │
-├── README.md               # ReadMe File 
-├── Notes.txt               # Deep Dive into the question I asked and how I solved problems.  
+├── README.md               # ReadMe File            
 ├── requirements.txt        # Required tools to run the project
 ```
 
@@ -94,4 +124,4 @@ Run through claude
 - Build a proper salary prediction model 
 - Generate more syntic data for forecast model
 - Geographic cost-of-living normalization
-- Data Cleaning using SQl
+
