@@ -1,5 +1,5 @@
-# Salary Prediction Analysis (In Progress)
-><i>Cleaned and analyzed 2,500+ synthetic data analyst job postings to surface salary trends by location, experience, company size and skills</i>
+# Salary Prediction Analysis 
+><i>Engineered a salary prediction tool using XGBoost on 2,200+ real-world job postings, giving data analysts a data-driven benchmark to negotiate compensation by role, location, and skill set.</i>
 
 
 ## Project Overview
@@ -15,24 +15,16 @@
 - [What I'd Improve with more Time](#what-id-improve-with--more-time)
 
 
-
-## Key Findings (In Progress)
-
-
-
 ## Dataset
-
-> [!WARNING]
-The `messy_data_analyst_job.csv` is to practice this end-to-end data cleaning and modeling because I couldn't find a dataset to use and that was free, I generated a synthetic dataset modeled on real job posting distributions and real location.
-
-Source: 
 
 | Propery  |   Details  |
 |-----------|------------|
 |   Rows    |  2501 Job titles      |
-|   Columns      |     11 Features       |
+|   Columns      |     11 Features  |
 | Target Variable |  Salary   |
 
+> [!Note]
+The `messy_data_analyst_job.csv` is to practice this end-to-end data cleaning and modeling because I couldn't find a dataset to use and that was free, I generated a synthetic dataset modeled on real job posting distributions and real location.
 
 
 ## Tools & Technology
@@ -48,17 +40,19 @@ Source:
 |  Google Sheets/Excel |   used for web scrapping data |  
 
 
-
 ## Project Structure
 
 ```python
 salary-prediction-project/
 ├── data/           
-│   ├── raw/          # Raw dataset
-│   ├── cleaned/      # Cleaned datasets
-│
-├── notebooks/                  # All notebooks
-│   ├── data_cleaning.ipynb/    # data cleaning notebook
+│   ├── raw/                                     # Raw dataset
+│   |    ├── messy_data_analyst_jobs.csv       
+│   │    
+│   ├── cleaned/                                     # Cleaned datasets
+│          ├── Cleaned_data_analyst_jobs.csv/
+│          ├── Cost-of-Living-Cities(CLI).csv
+├── notebooks/                                      # All notebooks
+│   ├── data_cleaning.ipynb/                        # data cleaning notebook
 │  
 ├── sql/
 │   ├── schema.sql                # SQL Schema
@@ -77,23 +71,8 @@ salary-prediction-project/
 ```
 
 
-
-## Methodology (In Progress)
-
-
-
-
-## Machine Learning Model (In Progress)
-
-
-
-## Business Recommendations (In Progress)
-
-
-
-
 ## Run The Project
-
+| 
 
 1.Clone the repository
 

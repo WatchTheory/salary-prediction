@@ -237,10 +237,7 @@ to identify cities.
 **6.5.How to fill in salary values from Model?**
 
 
------------- Not On the List Yet--------------
-1. How to fill in salary values from Model
-1. 
-1. 
+
 
 -----------------------------------------------------------
 
