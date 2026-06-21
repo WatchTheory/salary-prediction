@@ -2,17 +2,14 @@
 ><i>A machine learning project that explores what drives salary differences across data analyst roles — from Junior to Senior — using a real-world messy dataset, end-to-end data cleaning, and a multi-model regression pipeline.</i>
 
 
-
-
 ## Project Overview
-
-- [Key Findings](#key-findings-in-progress)
+- [Business Requirements](#business-requirements)
 - [Dataset](#dataset)
+- [Key Findings](#key-findings-in-progress)
 - [Tools & Technology](#tools--technology)
+- [Model](#model)
 - [Project Strucuture](#project-structure)
-- [Methodology](#methodology-in-progress)
-- [Machin Learning Model](#machine-learning-model-in-progress)
-- [Business Recommendations](#business-recommendations-in-progress)
+- [Screenshots](#screenshots)
 - [How to Run the Project](#run-the-project)
 - [What I'd Improve with more Time](#what-id-improve-with--more-time)
 
@@ -60,13 +57,10 @@ All four models produced low or negative test R² scores, with RandomForest perf
 
 
 **Why the low score**
-1. Random location imputation introduced noise into the strongest features. The source dataset had significant location column contamination (salary values, skill lists, and employment types ending up in the location field). After cleaning, missing locations were filled with random.choice() across 27 U.S. cities. This means the cost-of-living index and cost tier features — derived directly from location — carry random noise rather than real geographic signal. Location is typically the most predictive feature in a salary dataset, so this is the primary performance bottleneck.
-<br>
-2. Coarse ordinal encodings compress the salary signal. Mapping job titles to a 1–6 integer scale (Junior → 1, Senior → 6) imposes an artificial linear relationship that may not match actual salary gaps between roles. The same applies to experience level (0–4) and company size (0–4).
-<br>
-3. The source dataset is synthetic and small. The dataset was generated to simulate messy real-world data. At ~1,865 rows with noisy labels, there is limited signal for a model to generalize from.
-<br>
-4. RandomForest mean convergence. With weak features, RandomForest's averaging mechanism causes all predictions to cluster around the dataset mean (~$95–100k), regardless of whether the actual salary is $50k or $195k. This is a known behavior, not a bug.
+ 1. Random location imputation introduced noise into the strongest features. The source dataset had significant location column contamination (salary values, skill lists, and employment types ending up in the location field). After cleaning, missing locations were filled with random.choice() across 27 U.S. cities. This means the cost-of-living index and cost tier features — derived directly from location — carry random noise rather than real geographic signal. Location is typically the most predictive feature in a salary dataset, so this is the primary performance bottleneck.
+ 2. Coarse ordinal encodings compress the salary signal. Mapping job titles to a 1–6 integer scale (Junior → 1, Senior → 6) imposes an artificial linear relationship that may not match actual salary gaps between roles. The same applies to experience level (0–4) and company size (0–4).
+ 3. The source dataset is synthetic and small. The dataset was generated to simulate messy real-world data. At ~1,865 rows with noisy labels, there is limited signal for a model to generalize from.
+ 4. RandomForest mean convergence. With weak features, RandomForest's averaging mechanism causes all predictions to cluster around the dataset mean (~$95–100k), regardless of whether the actual salary is $50k or $195k. This is a known behavior, not a bug.
 
 <i>...So what dose this mean.</i>
 
