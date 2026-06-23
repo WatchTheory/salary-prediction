@@ -54,7 +54,7 @@ st.markdown("""
 
 # ── Data loader ───────────────────────────────────────────────────────────────
 @st.cache_data
-def load_data(path: str = "Cleaned_data_analyst_jobs.csv") -> pd.DataFrame:
+def load_data(path: str = "data/cleaned/Cleaned_data_analyst_jobs.csv") -> pd.DataFrame:
     df = pd.read_csv(path)
 
     # ── Normalise common column-name variants ──
