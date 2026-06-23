@@ -14,7 +14,7 @@
 - [What I'd Improve with more Time](#what-id-improve-with--more-time)
 
 
-Check out the steamlit app: 
+Check out the steamlit app: https://salary-prediction-xmh9uyvowvzvxdnopwd7vu.streamlit.app
 
 
 
