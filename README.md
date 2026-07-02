@@ -17,7 +17,6 @@
 Check out the steamlit app: https://salary-prediction-xmh9uyvowvzvxdnopwd7vu.streamlit.app
 
 
-
 ## Business Requirements
 What is a fair data-backed salary range for data analysts roles across the U.S - from entry-level to senior - and which factors influeneces compensation the most?
 <br>
